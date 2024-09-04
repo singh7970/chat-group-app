@@ -1,8 +1,8 @@
 services:
   - type: web
-    name: my-django-chat-app
+    name: chat-group-app
     env: python
-    plan: free  # Change this if you are using a paid plan
+    plan: free  # Adjust this based on your needs
     buildCommand: pip install -r requirements.txt
     startCommand: daphne -p $PORT chatapp.asgi:application
     envVars:
