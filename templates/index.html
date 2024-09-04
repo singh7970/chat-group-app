@@ -4,7 +4,7 @@
 <input type="button" value="Send" id="chat-message-submit">     
 
 <script>
-    const ws = new WebSocket('wss://chat-group-app.onrender.com/ws/ac/');
+   var ws = new WebSocket('ws://chat-group-app.onrender.com/ws/ac/');
 
 
     ws.onopen = function() {
