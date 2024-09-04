@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-jh=p1f)5jlb8+c$#2^2gyxk_tcnjy#-srjwz4%h8fm)5rnd!x#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://chat-group-app.onrender.com']
 
 
 # Application definition
