@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: my-django-chat-app
+    env: python
+    plan: free  # Change this if you are using a paid plan
+    buildCommand: pip install -r requirements.txt
+    startCommand: daphne -p $PORT chatapp.asgi:application
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        value: your_secret_key_here
+      - key: DJANGO_SETTINGS_MODULE
+        value: chatapp.settings
