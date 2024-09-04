@@ -4,7 +4,7 @@ services:
     env: python
     plan: free  # Adjust this based on your needs
     buildCommand: pip install -r requirements.txt
-    startCommand: daphne -p $PORT chatapp.asgi:application
+    startCommand: daphne -p 8000 chatapp.asgi:application
     envVars:
       - key: DJANGO_SECRET_KEY
         value: your_secret_key_here
