@@ -1,0 +1,35 @@
+<h1>Chat Application 2.0 </h1>
+<textarea id="chat-log" cols="100" rows="20"></textarea><br>
+<input type="text" id="chat-message-input" size="100"><br>
+<input type="button" value="Send" id="chat-message-submit">     
+
+<script>
+    var ws = new WebSocket('ws://127.0.0.1:8000/ws/ac/');
+
+    ws.onopen = function() {
+        console.log('WebSocket Connection open ...');
+    };
+
+    ws.onmessage = function(event) {
+        console.log('Message from server:', event.data);
+        typeof(event.data)
+        const data=JSON.parse(event.data)
+        document.querySelector('#chat-log').value+=(data.msg+'\n')
+        {% comment %} const chatLog = document.getElementById('chat-log');
+        chatLog.value += 'Server: ' + event.data + '\n'; {% endcomment %}
+    };
+
+    ws.onclose = function(event) {
+        console.log('WebSocket Connection closed unexpectedly');
+
+    };
+
+    document.getElementById('chat-message-submit').onclick = function(event) {
+        const messageInputDom = document.getElementById('chat-message-input');
+        const message = messageInputDom.value;
+        ws.send(JSON.stringify({
+            'msg': message
+        }));
+        messageInputDom.value = '';
+    };
+</script>
