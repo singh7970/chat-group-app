@@ -1,10 +1,10 @@
 <h1>Chat Application 2.0 </h1>
-<textarea id="chat-log" cols="20" rows="10"></textarea><br>
+<textarea id="chat-log" cols="10" rows="10"></textarea><br>
 <input type="text" id="chat-message-input" placeholder="Type...."size="100"><br>
 <input type="button" value="Send" id="chat-message-submit">     
 
 <script>
-   var ws = new WebSocket('ws://chat-group-app.onrender.com/ws/ac/');
+    var ws = new WebSocket('wss://chat-group-app.onrender.com/ws/ac/');
 
 
     ws.onopen = function() {
