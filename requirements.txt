@@ -1,4 +1,4 @@
-python manage.py collectstatic
+
 asgiref==3.8.1
 async-timeout==4.0.3
 attrs==24.2.0
